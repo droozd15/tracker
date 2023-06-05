@@ -2,13 +2,14 @@ import React from "react";
 import './ExpenseList.css';
 import Expense from "../../types/expense";
 import ExpenseItem from "../ExpenseItem";
+import Card from "../Card";
 
 function ExpenseList(props: { expenses: Expense[] }) {
 
   return (
-    <div className="expense-list">
+    <Card className="expense-list">
       {props.expenses.map(item => <ExpenseItem key={item.id} {...item} />)}
-    </div>
+    </Card>
   );
 }
 
