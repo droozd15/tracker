@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Expense from "./types/expense";
-import ExpenseList from "./components/ExpenseList";
+import ExpenseList from "./components/Expenses/ExpenseList";
 
 function App() {
   const expenses: Expense[] = [
