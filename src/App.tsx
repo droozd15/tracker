@@ -3,7 +3,7 @@ import './App.css';
 import Expense from "./types/expense";
 import ExpenseList from "./components/Expenses/ExpenseList";
 
-function App() {
+const App = () =>{
   const expenses: Expense[] = [
     {
       id: 'e1',

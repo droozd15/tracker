@@ -4,13 +4,11 @@ import Expense from "../../../types/expense";
 import ExpenseItem from "../ExpenseItem";
 import Card from "../../UI/Card";
 
-function ExpenseList(props: { expenses: Expense[] }) {
+const ExpenseList = (props: { expenses: Expense[] }) => (
+  <Card className="expense-list">
+    {props.expenses.map(item => <ExpenseItem key={item.id} {...item} />)}
+  </Card>
+);
 
-  return (
-    <Card className="expense-list">
-      {props.expenses.map(item => <ExpenseItem key={item.id} {...item} />)}
-    </Card>
-  );
-}
 
 export default ExpenseList;
