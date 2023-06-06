@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import Expense from "./types/expense";
+import NewExpense from './components/NewExpense';
+import {Expense} from './types/expense';
 import ExpenseList from "./components/Expenses/ExpenseList";
 
 const App = () =>{
@@ -26,8 +27,13 @@ const App = () =>{
     },
   ];
 
+  const onAddNewExpense = (expenseData: Expense) => {
+    console.log(expenseData)
+  }
+
   return (
     <div className="App">
+      <NewExpense onAddNewExpense={onAddNewExpense}/>
       <ExpenseList expenses={expenses}/>
     </div>
   );

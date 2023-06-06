@@ -1,6 +1,6 @@
 import React from "react";
 import './ExpenseList.css';
-import Expense from "../../../types/expense";
+import {Expense} from '../../../types/expense';
 import ExpenseItem from "../ExpenseItem";
 import Card from "../../UI/Card";
 

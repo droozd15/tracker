@@ -1,8 +1,12 @@
-type Expense = {
+export type Expense = {
   id: string;
   title: string;
   amount: number;
   date: Date;
 };
 
-export default Expense;
+export type ExpenseFormValue = {
+  title: string;
+  amount: string;
+  date: string,
+}
