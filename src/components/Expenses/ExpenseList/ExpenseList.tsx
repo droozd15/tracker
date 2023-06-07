@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import './ExpenseList.css';
 import {Expense} from '../../../types/expense';
-import ExpenseFilter from '../ExpenseFilter/ExpenseFilter';
+import ExpenseFilter from '../ExpenseFilter';
 import ExpenseItem from '../ExpenseItem';
 import Card from '../../UI/Card';
+import ExpensesChart from '../ExpensesChart';
 
 const ExpenseList = (props: { expenses: Expense[] }) => {
 
@@ -18,6 +19,7 @@ const ExpenseList = (props: { expenses: Expense[] }) => {
   return (
     <Card className="expense-list">
       <ExpenseFilter onChangeFilter={onChangeFilter} defaultYear={filteredYear}></ExpenseFilter>
+      <ExpensesChart expenses={filteredExpenses}/>
       {filteredExpenses.length === 0 ?
         <p className='expense-list__empty'>No expense found</p>
         : filteredExpenses.map(item => <ExpenseItem key={item.id} {...item} />)}
