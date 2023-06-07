@@ -4,9 +4,10 @@ import {Expense, ExpenseFormValue} from '../../../types/expense';
 
 type Props = {
   onSaveExpenseData: (expenseDate: Expense) => void;
+  onClickCancel: () => void;
 }
 
-const ExpenseForm = ({onSaveExpenseData}: Props) => {
+const ExpenseForm = ({onSaveExpenseData, onClickCancel}: Props) => {
   const [userInput, setUserInput] =
     useState<ExpenseFormValue>({title: '', amount: '', date: ''});
 
@@ -53,6 +54,7 @@ const ExpenseForm = ({onSaveExpenseData}: Props) => {
       </div>
       <div className="new-expense__actions">
         <button type="submit">Add Expense</button>
+        <button onClick={onClickCancel}>Cancel</button>
       </div>
     </form>
   )
