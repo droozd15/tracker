@@ -44,7 +44,7 @@ const AddUser = (props: Props) => {
   const [error, setError] = useState<null | { title: string; message: string }>();
   const hideErrorMessage = () => setError(null);
   return (
-    <div>
+    <>
       {error && <ErrorModal {...error} onConfirm={hideErrorMessage} />}
       <Card className={styles.input}>
         <form onSubmit={addUserHandler}>
@@ -59,7 +59,7 @@ const AddUser = (props: Props) => {
           </Button>
         </form>
       </Card>
-    </div>
+    </>
   );
 };
 
