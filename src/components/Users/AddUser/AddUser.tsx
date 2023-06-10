@@ -1,9 +1,12 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
+import { User } from '../../../types/user.type';
 import Button from '../../UI/Button';
 import Card from '../../UI/Card';
 import styles from './AddUser.module.css';
 
-type Props = {};
+type Props = {
+  onUserAddHandler: (user: User) => void;
+};
 const AddUser = (props: Props) => {
   const [userName, setUserName] = useState('');
   const [age, setAge] = useState('');
@@ -15,6 +18,8 @@ const AddUser = (props: Props) => {
     } else if (+age < 1) {
       return;
     } else {
+      props.onUserAddHandler({ userName, age: Number(age) });
+
       setUserName('');
       setAge('');
     }
