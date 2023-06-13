@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Login from './components/Login';
 import Home from './components/Home';
@@ -10,8 +10,8 @@ function App() {
   useEffect(() => {
     const storedUserLoggedInInformation = localStorage.getItem('isLoggedIn');
 
-    if(storedUserLoggedInInformation === '1') {
-      setIsLoggedIn(true)
+    if (storedUserLoggedInInformation === '1') {
+      setIsLoggedIn(true);
     }
   }, []);
 
@@ -27,10 +27,10 @@ function App() {
 
   return (
     <React.Fragment>
-      <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler}/>
+      <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
       <main>
-        {!isLoggedIn && <Login onLogin={loginHandler}/>}
-        {isLoggedIn && <Home/>}
+        {!isLoggedIn && <Login onLogin={loginHandler} />}
+        {isLoggedIn && <Home />}
       </main>
     </React.Fragment>
   );

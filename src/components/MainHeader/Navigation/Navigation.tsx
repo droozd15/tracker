@@ -5,7 +5,7 @@ import styles from './Navigation.module.css';
 type Props = {
   isLoggedIn: boolean;
   onLogout: () => void;
-}
+};
 const Navigation = (props: Props) => {
   return (
     <nav className={styles.nav}>

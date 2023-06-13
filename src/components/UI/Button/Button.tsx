@@ -1,4 +1,4 @@
-import React, {PropsWithChildren, MouseEvent} from 'react';
+import React, { PropsWithChildren, MouseEvent } from 'react';
 
 import styles from './Button.module.css';
 type Props = PropsWithChildren & {
